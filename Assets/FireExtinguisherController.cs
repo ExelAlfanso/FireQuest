@@ -35,6 +35,7 @@ public class FireExtinguisherController : MonoBehaviour
             OnFireHose();
         };  
         hoseAction.canceled += ctx => {
+            if(!openedPin) return;
             OnStopHose();
         };
 
@@ -53,6 +54,7 @@ public class FireExtinguisherController : MonoBehaviour
     void OnOpenPin()
     {
         animator.Play("OpenPin");
+        openedPin = true;
     }
     public void OnFireHose()
     {
