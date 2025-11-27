@@ -3,7 +3,8 @@ using UnityEngine;
 public class FireObject : MonoBehaviour
 {
     public ParticleSystem fireParticleSystem;
-    public float fireIntensity = 100f; // Represents how intense the fire is
+    
+    public float fireIntensity = 100f; 
 
     public void ReduceFire(float amount)
     {
@@ -21,12 +22,12 @@ public class FireObject : MonoBehaviour
     private void ExtinguishFire()
     {
         fireParticleSystem.Stop();
-        // Additional logic for extinguishing the fire can be added here
     }
 
     private void UpdateFireEffect()
     {
         var emission = fireParticleSystem.emission;
-        emission.rateOverTime = fireIntensity;
+        emission.rateOverTime = fireIntensity * 0.5f;
+
     }
 }

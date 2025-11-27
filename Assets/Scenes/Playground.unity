@@ -1132,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 8345070699079395523, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1953,26 +1957,6 @@ PrefabInstance:
     - target: {fileID: 1769021666713656691, guid: a943a8659de3010459f7985ef9787619, type: 3}
       propertyPath: m_Name
       value: FireObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989767279823381252, guid: a943a8659de3010459f7985ef9787619, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655809085704166815, guid: a943a8659de3010459f7985ef9787619, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655809085704166815, guid: a943a8659de3010459f7985ef9787619, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655809085704166815, guid: a943a8659de3010459f7985ef9787619, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655809085704166815, guid: a943a8659de3010459f7985ef9787619, type: 3}
-      propertyPath: m_LayerOverridePriority
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5595136030439140058, guid: a943a8659de3010459f7985ef9787619, type: 3}
       propertyPath: m_LocalPosition.x

@@ -15,17 +15,19 @@ public class FireExtinguisherController : MonoBehaviour
     [SerializeField] private ParticleSystem groundHitParticlePrefab;
     private bool hasSpawnedGroundEffect = false;
 
+
+    #region Unity Methods
     void Awake()
     {
         animator = GetComponent<Animator>();
     }   
 
-   void Update()
-{
-    RotateWithCamera();
-    UpdateFireHitEffect();
-}
-
+    void Update()
+    {
+        RotateWithCamera();
+        UpdateFireHitEffect();
+    }
+    #endregion  
 
     void OnEnable(){
         inputSystem = new InputSystem_Actions();
@@ -50,7 +52,7 @@ public class FireExtinguisherController : MonoBehaviour
     {
         inputSystem.Disable();
     }
-
+    #region Animation Events
     void OnOpenPin()
     {
         animator.Play("OpenPin");
@@ -75,6 +77,9 @@ public class FireExtinguisherController : MonoBehaviour
         }
     }
  
+    #endregion
+
+    #region Helper Methods
     void RotateWithCamera()
     {
         Transform cam = Camera.main.transform;
@@ -92,19 +97,21 @@ public class FireExtinguisherController : MonoBehaviour
     {
         if (!hoseParticle.isPlaying) return; // only work when spraying
 
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(nozzleTip.transform.position, -nozzleTip.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, sprayRange))
         {
-            Debug.DrawLine(ray.origin, hit.point, Color.cyan);
-
             FireObject fire = hit.collider.GetComponent<FireObject>();
 
             if (fire != null)
             {
                 print("Hitting fire object");
                 fire.ReduceFire(extinguishRate * Time.deltaTime);
+            }
+            else
+            {
+                print("Not hitting fire object");
             }
         }
     }
@@ -129,7 +136,7 @@ public class FireExtinguisherController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(origin, 0.05f);
     }
-
+    #endregion
 }
 
 

@@ -119,6 +119,7 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
+			if(!UIManager.instance.isPaused)
 			CameraRotation();
 		}
 
